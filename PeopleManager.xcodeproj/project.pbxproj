@@ -14,6 +14,11 @@
 		4FF3F346200F2C9A00685D1B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4FF3F345200F2C9A00685D1B /* Assets.xcassets */; };
 		4FF3F349200F2C9A00685D1B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4FF3F347200F2C9A00685D1B /* LaunchScreen.storyboard */; };
 		4FF3F354200F2C9A00685D1B /* PeopleManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FF3F353200F2C9A00685D1B /* PeopleManagerTests.swift */; };
+		4FF3F364200F304100685D1B /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FF3F363200F304100685D1B /* Person.swift */; };
+		4FF3F366200F308100685D1B /* PeopleService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FF3F365200F308100685D1B /* PeopleService.swift */; };
+		4FF3F368200F310000685D1B /* PeopleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FF3F367200F310000685D1B /* PeopleViewModel.swift */; };
+		4FF3F36C200F327300685D1B /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FF3F36A200F327300685D1B /* HomeViewController.swift */; };
+		4FF3F36D200F327300685D1B /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4FF3F36B200F327300685D1B /* HomeViewController.xib */; };
 		B62F918BE09E7057DA27100F /* Pods_PeopleManagerTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E36924A097E44CFF7D745A6 /* Pods_PeopleManagerTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -40,6 +45,11 @@
 		4FF3F34F200F2C9A00685D1B /* PeopleManagerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PeopleManagerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4FF3F353200F2C9A00685D1B /* PeopleManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeopleManagerTests.swift; sourceTree = "<group>"; };
 		4FF3F355200F2C9A00685D1B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4FF3F363200F304100685D1B /* Person.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
+		4FF3F365200F308100685D1B /* PeopleService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeopleService.swift; sourceTree = "<group>"; };
+		4FF3F367200F310000685D1B /* PeopleViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeopleViewModel.swift; sourceTree = "<group>"; };
+		4FF3F36A200F327300685D1B /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		4FF3F36B200F327300685D1B /* HomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
 		5E36924A097E44CFF7D745A6 /* Pods_PeopleManagerTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PeopleManagerTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		850219BFA0BE64A8A4A13868 /* Pods-PeopleManagerTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PeopleManagerTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PeopleManagerTests/Pods-PeopleManagerTests.debug.xcconfig"; sourceTree = "<group>"; };
 		D8830427844152D29A8133E3 /* Pods-PeopleManagerTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PeopleManagerTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-PeopleManagerTests/Pods-PeopleManagerTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -98,6 +108,10 @@
 		4FF3F33D200F2C9A00685D1B /* PeopleManager */ = {
 			isa = PBXGroup;
 			children = (
+				4FF3F35F200F302400685D1B /* Models */,
+				4FF3F362200F302500685D1B /* Services */,
+				4FF3F361200F302500685D1B /* ViewModels */,
+				4FF3F360200F302500685D1B /* Views */,
 				4FF3F33E200F2C9A00685D1B /* AppDelegate.swift */,
 				4FF3F340200F2C9A00685D1B /* ViewController.swift */,
 				4FF3F342200F2C9A00685D1B /* Main.storyboard */,
@@ -115,6 +129,47 @@
 				4FF3F355200F2C9A00685D1B /* Info.plist */,
 			);
 			path = PeopleManagerTests;
+			sourceTree = "<group>";
+		};
+		4FF3F35F200F302400685D1B /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				4FF3F363200F304100685D1B /* Person.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		4FF3F360200F302500685D1B /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				4FF3F369200F325400685D1B /* Home */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		4FF3F361200F302500685D1B /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				4FF3F367200F310000685D1B /* PeopleViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		4FF3F362200F302500685D1B /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				4FF3F365200F308100685D1B /* PeopleService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		4FF3F369200F325400685D1B /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				4FF3F36A200F327300685D1B /* HomeViewController.swift */,
+				4FF3F36B200F327300685D1B /* HomeViewController.xib */,
+			);
+			path = Home;
 			sourceTree = "<group>";
 		};
 		A0DEC60FA73F4FE97B452C4A /* Pods */ = {
@@ -220,6 +275,7 @@
 				4FF3F349200F2C9A00685D1B /* LaunchScreen.storyboard in Resources */,
 				4FF3F346200F2C9A00685D1B /* Assets.xcassets in Resources */,
 				4FF3F344200F2C9A00685D1B /* Main.storyboard in Resources */,
+				4FF3F36D200F327300685D1B /* HomeViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -343,8 +399,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4FF3F366200F308100685D1B /* PeopleService.swift in Sources */,
+				4FF3F364200F304100685D1B /* Person.swift in Sources */,
 				4FF3F341200F2C9A00685D1B /* ViewController.swift in Sources */,
+				4FF3F368200F310000685D1B /* PeopleViewModel.swift in Sources */,
 				4FF3F33F200F2C9A00685D1B /* AppDelegate.swift in Sources */,
+				4FF3F36C200F327300685D1B /* HomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
