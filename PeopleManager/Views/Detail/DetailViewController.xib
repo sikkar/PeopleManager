@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DetailViewController" customModule="PeopleManager" customModuleProvider="target">
+            <connections>
+                <outlet property="dissmisButton" destination="mEa-v5-bsP" id="B5s-Ss-teF"/>
+                <outlet property="personDetailsView" destination="pHj-Uo-ym7" id="PPX-Za-RFa"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mEa-v5-bsP">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                    <connections>
+                        <action selector="dismissViewController:" destination="-1" eventType="touchUpInside" id="s3s-2E-jea"/>
+                    </connections>
+                </button>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pHj-Uo-ym7">
+                    <rect key="frame" x="-250" y="218.5" width="250" height="250"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="250" id="1cE-sT-ZMi"/>
+                        <constraint firstAttribute="width" constant="250" id="jLF-FE-H95"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="0.76312658629441621" green="0.76312658629441621" blue="0.76312658629441621" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="pHj-Uo-ym7" firstAttribute="centerY" secondItem="fnl-2z-Ty3" secondAttribute="centerY" id="3xv-za-Cuc"/>
+                <constraint firstItem="mEa-v5-bsP" firstAttribute="leading" secondItem="pHj-Uo-ym7" secondAttribute="trailing" id="8Tm-I8-7KV"/>
+                <constraint firstItem="mEa-v5-bsP" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="bottom" id="K61-mI-LQo"/>
+                <constraint firstItem="mEa-v5-bsP" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="Rnk-6U-MV4"/>
+                <constraint firstItem="mEa-v5-bsP" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="nnO-OS-jWQ"/>
+                <constraint firstItem="pHj-Uo-ym7" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="-250" id="tim-Wr-pE5"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <point key="canvasLocation" x="34.5" y="53.5"/>
+        </view>
+    </objects>
+</document>

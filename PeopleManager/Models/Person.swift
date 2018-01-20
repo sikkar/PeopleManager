@@ -10,9 +10,9 @@ import ObjectMapper
 
 struct Person: Mappable {
     
-    var id : Int? = 0
-    var name: String? = nil
-    var birthdate: Date? = nil
+    var id : Int = 0
+    var name: String?
+    var birthdate: Date?
     
     public init?(map: Map) {
     }
