@@ -6,6 +6,8 @@
   Copyright © 2018 -. All rights reserved.
 */
 
+// == home screen ==
+"NO_DATA_AVAILABLE" = "No data available";
 
 // == Add Person screen ==
 "PERSON_DATA_LABEL" = "Person data";

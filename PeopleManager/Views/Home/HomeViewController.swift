@@ -12,6 +12,7 @@ class HomeViewController: UIViewController {
     
     @IBOutlet var peopleCollectionView: UICollectionView!
     @IBOutlet weak var topBarView: UIView!
+    @IBOutlet weak var noDataLabel: UILabel!
     
     fileprivate let personCellIdentifier = "personCellIdentifier"
     fileprivate let sectionInsets = UIEdgeInsets(top: 85.0, left: 10.0, bottom: 10.0, right: 10.0)
@@ -35,6 +36,7 @@ class HomeViewController: UIViewController {
         peopleCollectionView.register(UINib.init(nibName: "PersonCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: personCellIdentifier)
         
         self.view.setTopBarShadow(view: topBarView)
+        noDataLabel.text = "NO_DATA_AVAILABLE".localized
         
         NotificationCenter.default.addObserver(
             self,
@@ -57,6 +59,11 @@ class HomeViewController: UIViewController {
             }else {
                 DispatchQueue.main.async {
                     LoadingOverlay.shared.hideOverlay()
+                    if(self.viewModel.peopleList.count == 0){
+                        self.view.bringSubview(toFront: self.noDataLabel)
+                    } else {
+                        self.view.sendSubview(toBack: self.noDataLabel)
+                    }
                     self.peopleCollectionView.reloadData()
                 }
             }

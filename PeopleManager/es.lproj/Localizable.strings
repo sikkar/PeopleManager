@@ -6,8 +6,19 @@
   Copyright © 2018 -. All rights reserved.
 */
 
+// == home screen ==
+"NO_DATA_AVAILABLE" = "No hay datos";
+
 // == Add Person screen ==
 "PERSON_DATA_LABEL" = "Datos persona";
 "NAME_LABEL" = "Nombre";
 "BIRTH_LABEL" = "Fecha";
 "BIRTHDAY_LABEL" = "Fecha Nac.";
+
+// == Service Errors ==
+"ERROR" = "Error";
+"ERROR_RETRIEVING_ALL" = "Error obteniendo los datos de las Personas";
+"ERROR_RETRIEVING_SINGLE" = "Ha habido un error obteniendo los datos de la Persona";
+"ERROR_ADDING_PERSON" = "Ha habido un error intentando añadir a la Persona";
+"ERROR_DELETING_PERSON" = "Ha habido un error al borrar a la Persona";
+"ERROR_UPDATING_PERSON" = "Ha habido un error al actualizar a la Persona";

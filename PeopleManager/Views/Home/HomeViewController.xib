@@ -12,6 +12,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HomeViewController" customModule="PeopleManager" customModuleProvider="target">
             <connections>
+                <outlet property="noDataLabel" destination="MqJ-go-Zg8" id="l4a-le-JX9"/>
                 <outlet property="peopleCollectionView" destination="D08-Na-erJ" id="yHv-mJ-ksQ"/>
                 <outlet property="topBarView" destination="xPf-br-zkx" id="6rS-aZ-em1"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
@@ -22,6 +23,12 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MqJ-go-Zg8">
+                    <rect key="frame" x="166" y="333" width="42" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="D08-Na-erJ">
                     <rect key="frame" x="0.0" y="20" width="375" height="647"/>
                     <color key="backgroundColor" red="0.26666666666666666" green="0.42352941176470588" blue="0.70196078431372544" alpha="1" colorSpace="calibratedRGB"/>
@@ -79,9 +86,11 @@
                 <constraint firstItem="xPf-br-zkx" firstAttribute="trailing" secondItem="aFy-Lf-xh2" secondAttribute="trailing" id="AMm-Ff-fRu"/>
                 <constraint firstItem="D08-Na-erJ" firstAttribute="top" secondItem="aFy-Lf-xh2" secondAttribute="top" id="Ehh-B8-uej"/>
                 <constraint firstItem="D08-Na-erJ" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="FSR-iA-cCS"/>
+                <constraint firstItem="MqJ-go-Zg8" firstAttribute="centerY" secondItem="aFy-Lf-xh2" secondAttribute="centerY" id="RGr-0i-qWM"/>
                 <constraint firstItem="D08-Na-erJ" firstAttribute="bottom" secondItem="i5M-Pr-FkT" secondAttribute="bottom" id="UpS-Yh-T4R"/>
                 <constraint firstItem="D08-Na-erJ" firstAttribute="trailing" secondItem="i5M-Pr-FkT" secondAttribute="trailing" id="XfO-2V-PtL"/>
                 <constraint firstItem="xPf-br-zkx" firstAttribute="leading" secondItem="aFy-Lf-xh2" secondAttribute="leading" id="fv2-Id-by6"/>
+                <constraint firstItem="MqJ-go-Zg8" firstAttribute="centerX" secondItem="aFy-Lf-xh2" secondAttribute="centerX" id="hpc-Ye-d15"/>
                 <constraint firstItem="xPf-br-zkx" firstAttribute="top" secondItem="aFy-Lf-xh2" secondAttribute="top" id="sh6-vZ-0UJ"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="aFy-Lf-xh2"/>
