@@ -18,6 +18,7 @@ class DetailViewController: UIViewController {
     
     var viewModel: PeopleViewModel?
     var person: Person?
+    var modalDelegate: ModalDelegate?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -57,6 +58,8 @@ class DetailViewController: UIViewController {
         let background = UIColor.gray
         let dimmedBackground = background.withAlphaComponent(0.4)
         self.view.backgroundColor = dimmedBackground
+        nameLabel.text = "NAME_LABEL".localized
+        birthdayLabel.text = "BIRTHDAY_LABEL".localized
     }
     
     private func bindPerson(){
@@ -66,27 +69,38 @@ class DetailViewController: UIViewController {
     
     //MARK: Events
     @IBAction func dismissViewController(_ sender: Any) {
-        postNotification(value: NotificationValue.maximizeView.rawValue)
         let amountToTranslate = self.personDetailsView.bounds.width + self.view.bounds.width
+        dismissAnimation(translationX: amountToTranslate, translationY: 0)
+    }
+    @IBAction func userDeletionPressed(_ sender: Any) {
+        LoadingOverlay.shared.showOverlay(view: self.view)
+        viewModel?.requestDeletePerson(personId: (person?.id)!, completionHandler: { error in
+            LoadingOverlay.shared.hideOverlay()
+            if let removeError = error {
+                PeopleErrorManager.presentLocalizedError(error: removeError, inView: self)
+            }else {
+                let deleteTranslationY = (self.personDetailsView.bounds.height / 2 + self.view.bounds.height / 2)
+                let deleteTranslationX = deleteTranslationY-(self.personDetailsView.bounds.height / 2)
+                self.dismissAnimation(translationX: deleteTranslationX, translationY: deleteTranslationY)
+                if let modalDelegate = self.modalDelegate {
+                    modalDelegate.reloadViewModel()
+                }
+            }
+        })
+    }
+    
+    func dismissAnimation(translationX: CGFloat, translationY: CGFloat){
+        postNotification(value: NotificationValue.maximizeView.rawValue)
         AnimationHelper.animateWithSpringCompletion(duration: 0.5, animations: {
-             self.personDetailsView.transform = CGAffineTransform(translationX: amountToTranslate, y: 0)
+            self.personDetailsView.transform = CGAffineTransform(translationX: translationX , y: translationY)
         }) { finished in
             self.dismiss(animated: false, completion: nil)
         }
     }
-    @IBAction func userDeletionPressed(_ sender: Any) {
-        postNotification(value: NotificationValue.maximizeView.rawValue)
-        let deleteTranslationY = (self.personDetailsView.bounds.height / 2 + self.view.bounds.height / 2)
-        let deleteTranslationX = deleteTranslationY-(self.personDetailsView.bounds.height / 2)
-        AnimationHelper.animateWithSpringCompletion(duration: 0.5, animations: {
-            self.personDetailsView.transform = CGAffineTransform(translationX: deleteTranslationX , y: deleteTranslationY)
-        }) { finished in
-             self.dismiss(animated: false, completion: nil)
-        }
-    }
-    
+}
+//MARK:Notification Extension
+extension UIViewController {
     func postNotification(value: String) {
         NotificationCenter.default.post(name: NSNotification.Name(rawValue: value), object: nil)
     }
-    
 }

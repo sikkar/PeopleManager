@@ -10,15 +10,14 @@ import ObjectMapper
 
 struct Person: Mappable {
     
-    var id : Int = 0
+    var id : Int?
     var name: String?
     var birthdate: Date?
     
     public init?(map: Map) {
     }
     
-    public init(id: Int, name:String, birthDate: Date){
-        self.id = id
+    public init(name:String, birthDate: Date){
         self.name = name
         self.birthdate = birthDate
     }

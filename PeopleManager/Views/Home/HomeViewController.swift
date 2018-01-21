@@ -49,9 +49,16 @@ class HomeViewController: UIViewController {
     }
     
     @objc func bindViewModel(){
-        viewModel.requestAllPeople {
-            DispatchQueue.main.async {
-                self.peopleCollectionView.reloadData()
+        LoadingOverlay.shared.showOverlay(view: self.view)
+        viewModel.requestAllPeople { error in
+            if let error = error{
+                PeopleErrorManager.presentLocalizedError(error: error, inView: self)
+                LoadingOverlay.shared.hideOverlay()
+            }else {
+                DispatchQueue.main.async {
+                    LoadingOverlay.shared.hideOverlay()
+                    self.peopleCollectionView.reloadData()
+                }
             }
         }
     }
@@ -71,7 +78,13 @@ class HomeViewController: UIViewController {
         })
        UIApplication.shared.statusBarStyle = .default
     }
-
+    @IBAction func addPersonPressed(_ sender: Any) {
+        let addPerson = AddPersonViewController.init(nibName: "AddPersonViewController", bundle: nil, viewModel: viewModel)
+        addPerson.modalDelegate = self
+        addPerson.modalPresentationStyle = .overFullScreen
+        navigationController?.present(addPerson, animated: false, completion: nil)
+    }
+    
 }
 
 //MARK:UICollectionView Datasource
@@ -96,6 +109,7 @@ extension HomeViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let person = viewModel.peopleList[indexPath.row]
         let detail = DetailViewController.init(nibName: "DetailViewController", bundle: nil, viewModel: self.viewModel, person: person)
+        detail.modalDelegate = self
         detail.modalPresentationStyle = .overFullScreen
         navigationController?.present(detail, animated: false, completion: nil)
     }
@@ -138,8 +152,19 @@ extension HomeViewController: UIScrollViewDelegate{
     }
 }
 
+extension HomeViewController: ModalDelegate {
+    func reloadViewModel() {
+        self.bindViewModel()
+    }
+}
+
 //MARK:Notifications
 enum NotificationValue: String {
     case minimizeView = "minimizeView"
     case maximizeView = "maximizeView"
+}
+
+//MARK:Modal Delegate
+protocol ModalDelegate {
+    func reloadViewModel()
 }

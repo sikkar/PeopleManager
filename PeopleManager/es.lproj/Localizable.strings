@@ -1,0 +1,13 @@
+/* 
+  Localizable.strings
+  PeopleManager
+
+  Created by Angel Escribano on 21/1/18.
+  Copyright © 2018 -. All rights reserved.
+*/
+
+// == Add Person screen ==
+"PERSON_DATA_LABEL" = "Datos persona";
+"NAME_LABEL" = "Nombre";
+"BIRTH_LABEL" = "Fecha";
+"BIRTHDAY_LABEL" = "Fecha Nac.";

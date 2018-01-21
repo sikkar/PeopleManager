@@ -1,0 +1,22 @@
+/* 
+  Localizable.strings
+  PeopleManager
+
+  Created by Angel Escribano on 21/1/18.
+  Copyright © 2018 -. All rights reserved.
+*/
+
+
+// == Add Person screen ==
+"PERSON_DATA_LABEL" = "Person data";
+"NAME_LABEL" = "Name";
+"BIRTH_LABEL" = "Birth";
+"BIRTHDAY_LABEL" = "BirthDay";
+
+// == Service Errors ==
+"ERROR" = "Error";
+"ERROR_RETRIEVING_ALL" = "There was an error retrieving People data";
+"ERROR_RETRIEVING_SINGLE" = "There was an error retrieving person data";
+"ERROR_ADDING_PERSON" = "There was an error while trying to add a Person";
+"ERROR_DELETING_PERSON" = "There was an error trying to delete the Person";
+"ERROR_UPDATING_PERSON" = "There was an error trying to update the Person";

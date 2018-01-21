@@ -16,3 +16,12 @@ extension Date {
         return formatter.string(from: self)
     }
 }
+
+extension String {
+    
+    var stringToDate: Date {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "dd MMMM yyyy"
+        return formatter.date(from: self)!
+    }
+}
