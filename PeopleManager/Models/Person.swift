@@ -26,7 +26,7 @@ struct Person: Mappable {
     mutating func mapping(map: Map) {
         self.id <- map["id"]
         self.name <- map["name"]
-        self.birthdate <- (map["birthdate"], DateTransform())
+        self.birthdate <- (map["birthdate"], CustomDateFormatTransform.init(formatString: "yyyy-MM-dd'T'HH:mm:ss"))
     }
     
 }

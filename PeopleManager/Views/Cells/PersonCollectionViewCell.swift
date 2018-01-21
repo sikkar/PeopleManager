@@ -1,8 +1,8 @@
 //
-//  PersonTableViewCell.swift
+//  PersonCollectionViewCell.swift
 //  PeopleManager
 //
-//  Created by Angel Escribano on 19/1/18.
+//  Created by Angel Escribano on 20/1/18.
 //  Copyright © 2018 -. All rights reserved.
 //
 
@@ -11,20 +11,21 @@ import UIKit
 class PersonCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var customContentView: UIView!
     
-    var personModel: Person? {
-        didSet {
-            bindPersonModel()
+    var personModel: Person?{
+        didSet{
+            bindPerson()
         }
     }
-    
+
     override func awakeFromNib() {
         super.awakeFromNib()
-        layer.cornerRadius = 10.0
+        setCellsShadow(view: customContentView)
     }
     
-    func bindPersonModel(){
-        nameLabel?.text = personModel?.name
+    private func bindPerson(){
+        self.nameLabel.text = self.personModel?.name
     }
-    
+
 }

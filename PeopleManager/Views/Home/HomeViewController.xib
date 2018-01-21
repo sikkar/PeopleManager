@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
-    <device id="retina4_7" orientation="portrait">
+    <device id="retina5_9" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -13,17 +13,18 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HomeViewController" customModule="PeopleManager" customModuleProvider="target">
             <connections>
                 <outlet property="peopleCollectionView" destination="D08-Na-erJ" id="yHv-mJ-ksQ"/>
+                <outlet property="topBarView" destination="xPf-br-zkx" id="6rS-aZ-em1"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
-            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="D08-Na-erJ">
-                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <rect key="frame" x="0.0" y="44" width="375" height="768"/>
+                    <color key="backgroundColor" red="0.26666666666666666" green="0.42352941176470588" blue="0.70196078431372544" alpha="1" colorSpace="calibratedRGB"/>
                     <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Col-id-etD">
                         <size key="itemSize" width="50" height="50"/>
                         <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -31,16 +32,62 @@
                         <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                     </collectionViewFlowLayout>
                 </collectionView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xPf-br-zkx">
+                    <rect key="frame" x="0.0" y="44" width="375" height="75"/>
+                    <subviews>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" image="peoplelogo" translatesAutoresizingMaskIntoConstraints="NO" id="94b-DG-qjg">
+                            <rect key="frame" x="147" y="21.333333333333329" width="80" height="33"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="80" id="B47-8Y-mCw"/>
+                                <constraint firstAttribute="height" constant="33" id="jxt-mq-N66"/>
+                            </constraints>
+                        </imageView>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Oi5-QP-N8Q">
+                            <rect key="frame" x="10" y="13.666666666666664" width="48" height="48"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="48" id="3so-Nj-2iU"/>
+                                <constraint firstAttribute="width" constant="48" id="OYk-a4-e6K"/>
+                            </constraints>
+                            <state key="normal" image="filter"/>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pP5-j2-aPh">
+                            <rect key="frame" x="317" y="13.666666666666664" width="48" height="48"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="48" id="1r9-WY-zH6"/>
+                                <constraint firstAttribute="width" constant="48" id="KHA-Dx-LaA"/>
+                            </constraints>
+                            <state key="normal" image="adduser"/>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="trailing" secondItem="pP5-j2-aPh" secondAttribute="trailing" constant="10" id="7CS-S1-Xp3"/>
+                        <constraint firstItem="pP5-j2-aPh" firstAttribute="centerY" secondItem="xPf-br-zkx" secondAttribute="centerY" id="8r5-9b-YmI"/>
+                        <constraint firstItem="Oi5-QP-N8Q" firstAttribute="leading" secondItem="xPf-br-zkx" secondAttribute="leading" constant="10" id="MjG-kF-7ss"/>
+                        <constraint firstItem="94b-DG-qjg" firstAttribute="centerX" secondItem="xPf-br-zkx" secondAttribute="centerX" id="WEf-j6-2eK"/>
+                        <constraint firstItem="94b-DG-qjg" firstAttribute="centerY" secondItem="xPf-br-zkx" secondAttribute="centerY" id="Wgq-cN-o5c"/>
+                        <constraint firstAttribute="height" constant="75" id="dpk-Ew-kUf"/>
+                        <constraint firstItem="Oi5-QP-N8Q" firstAttribute="centerY" secondItem="xPf-br-zkx" secondAttribute="centerY" id="kAb-VM-BEy"/>
+                    </constraints>
+                </view>
             </subviews>
-            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
-                <constraint firstItem="D08-Na-erJ" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="Ehh-B8-uej"/>
+                <constraint firstItem="xPf-br-zkx" firstAttribute="trailing" secondItem="aFy-Lf-xh2" secondAttribute="trailing" id="AMm-Ff-fRu"/>
+                <constraint firstItem="D08-Na-erJ" firstAttribute="top" secondItem="aFy-Lf-xh2" secondAttribute="top" id="Ehh-B8-uej"/>
                 <constraint firstItem="D08-Na-erJ" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="FSR-iA-cCS"/>
                 <constraint firstItem="D08-Na-erJ" firstAttribute="bottom" secondItem="i5M-Pr-FkT" secondAttribute="bottom" id="UpS-Yh-T4R"/>
                 <constraint firstItem="D08-Na-erJ" firstAttribute="trailing" secondItem="i5M-Pr-FkT" secondAttribute="trailing" id="XfO-2V-PtL"/>
+                <constraint firstItem="xPf-br-zkx" firstAttribute="leading" secondItem="aFy-Lf-xh2" secondAttribute="leading" id="fv2-Id-by6"/>
+                <constraint firstItem="xPf-br-zkx" firstAttribute="top" secondItem="aFy-Lf-xh2" secondAttribute="top" id="sh6-vZ-0UJ"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="aFy-Lf-xh2"/>
             <point key="canvasLocation" x="35.5" y="54.5"/>
         </view>
     </objects>
+    <resources>
+        <image name="adduser" width="32" height="32"/>
+        <image name="filter" width="32" height="32"/>
+        <image name="peoplelogo" width="119" height="50"/>
+    </resources>
 </document>

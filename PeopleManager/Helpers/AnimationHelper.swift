@@ -10,13 +10,13 @@ import UIKit
 
 class AnimationHelper: NSObject {
     
-    public class func animateThis(duration: TimeInterval, animations: @escaping () -> Void){
+    public class func animateWithSpring(duration: TimeInterval, animations: @escaping () -> Void){
         UIView.animate(
             withDuration: duration,
             delay: 0,
-            usingSpringWithDamping: 0.7,
-            initialSpringVelocity: 0.7,
-            options: [],
+            usingSpringWithDamping: 0.5,
+            initialSpringVelocity: 0.5,
+            options: [.curveEaseOut],
             animations: {
                 animations()
         },
@@ -24,12 +24,28 @@ class AnimationHelper: NSObject {
         )
     }
     
-    public class func animateWithCompletion(duration: TimeInterval, animations: @escaping () -> Void, completion: @escaping (Bool) -> Void){
-        UIView.animate(withDuration: duration, delay: 0, usingSpringWithDamping: 0.7, initialSpringVelocity: 0.7, options: [], animations: {
-            animations()
+    public class func animateWithSpringCompletion(duration: TimeInterval, animations: @escaping () -> Void, completion: @escaping (Bool) -> Void){
+        UIView.animate(
+            withDuration: duration,
+            delay: 0,
+            usingSpringWithDamping: 0.5,
+            initialSpringVelocity: 0.5,
+            options: [.curveEaseOut],
+            animations: {
+                animations()
         }) { finished in
             completion(finished)
         }
+    }
+    
+    public class func animateView(duration: TimeInterval, animations: @escaping() -> Void) {
+        UIView.animate(
+            withDuration: duration,
+            animations: {
+                animations()
+        },
+            completion: nil
+        )
     }
     
 }
