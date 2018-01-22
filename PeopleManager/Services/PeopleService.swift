@@ -10,7 +10,7 @@ import Alamofire
 import AlamofireObjectMapper
 
 enum Endpoints: String {
-    case base = "http://hello-world.innocv.com/api/user"
+    case base = "https://hello-world.innocv.com/api/user"
     case all = "/getall"
     case person = "/get/"
     case create = "/create"
@@ -74,7 +74,7 @@ class PeopleService: NSObject {
                         completion(person, nil)
                     }
                 } else {
-                    completion(nil, PeopleError(message: "".localized, errorCode:String(describing: response.response!.statusCode)))
+                    completion(nil, PeopleError(message: "ERROR_UPDATING_PERSON".localized, errorCode:String(describing: response.response!.statusCode)))
                 }
         }
     }

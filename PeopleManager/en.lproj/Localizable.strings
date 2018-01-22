@@ -16,6 +16,9 @@
 "BIRTH_LABEL" = "Birthday";
 "BIRTHDAY_LABEL" = "Birthday";
 
+//== Detail Person Screen ==
+"EDIT_PERSON_BUTTON" = "Edit";
+
 // == Service Errors ==
 "ERROR" = "Error";
 "ERROR_RETRIEVING_ALL" = "There was an error retrieving People data";

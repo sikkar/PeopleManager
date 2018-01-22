@@ -16,6 +16,9 @@
 "BIRTH_LABEL" = "Fecha de naciemiento";
 "BIRTHDAY_LABEL" = "Fecha Nac.";
 
+//== Detail Person Screen ==
+"EDIT_PERSON_BUTTON" = "Editar";
+
 // == Service Errors ==
 "ERROR" = "Error";
 "ERROR_RETRIEVING_ALL" = "Error obteniendo los datos de las Personas";
