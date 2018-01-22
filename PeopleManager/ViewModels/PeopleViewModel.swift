@@ -11,6 +11,7 @@ import UIKit
 class PeopleViewModel: NSObject {
 
     var peopleList: [Person] = []
+    var filteredPersonList: [Person] = []
     
     required override init() {
         
@@ -24,8 +25,9 @@ class PeopleViewModel: NSObject {
             } else {
                 if let people = peopleArray {
                     strongSelf.peopleList = people
-                    for _ in 1...15 {
-                        strongSelf.peopleList += people
+                    for _ in 1...10 {
+                       strongSelf.peopleList.append(Person.init(name: "Angel", birthDate: Date()))
+                        strongSelf.peopleList.append(Person.init(name: "Leonardo", birthDate: Date()))
                     }
                     completionHandler(nil)
                 }
@@ -51,6 +53,22 @@ class PeopleViewModel: NSObject {
             } else {
                 completionHandler(nil)
             }
+        }
+    }
+    
+    func requestUpdatePerson(person: Person, completionHandler: @escaping ((PeopleError?) -> Void)){
+        PeopleService.sharedInstance.updatePerson(person: person) { person, error in
+            if let updateError = error {
+                completionHandler(updateError)
+            } else {
+                completionHandler(nil)
+            }
+        }
+    }
+    
+    func filterPeopleListByName(name: String){
+        filteredPersonList = peopleList.filter { person -> Bool in
+            return (person.name?.lowercased().contains(name.lowercased()))!
         }
     }
 }

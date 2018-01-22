@@ -10,8 +10,6 @@ import UIKit
 
 class AddPersonViewController: UIViewController {
     @IBOutlet weak var personDataView: UIView!
-    @IBOutlet weak var nameLabel: UILabel!
-    @IBOutlet weak var birthLabel: UILabel!
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var birthTextField: UITextField!
     @IBOutlet weak var addPersonButton: UIButton!
@@ -43,8 +41,8 @@ class AddPersonViewController: UIViewController {
         let dimmedBackground = background.withAlphaComponent(0.4)
         self.view.backgroundColor = dimmedBackground
         datepickerView.isHidden = true
-        nameLabel.text = "NAME_LABEL".localized
-        birthLabel.text = "BIRTH_LABEL".localized
+        nameTextField.placeholder = "NAME_LABEL".localized
+        birthTextField.placeholder = "BIRTH_LABEL".localized
         personDataLabel.text = "PERSON_DATA_LABEL".localized
     }
     

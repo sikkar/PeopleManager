@@ -13,10 +13,16 @@ class HomeViewController: UIViewController {
     @IBOutlet var peopleCollectionView: UICollectionView!
     @IBOutlet weak var topBarView: UIView!
     @IBOutlet weak var noDataLabel: UILabel!
+    @IBOutlet weak var filterSearchView: UIView!
+    @IBOutlet weak var applyFilterButton: UIButton!
+    @IBOutlet weak var filterSearchViewTopConstraint: NSLayoutConstraint!
+    @IBOutlet weak var filterTextField: UITextField!
     
     fileprivate let personCellIdentifier = "personCellIdentifier"
     fileprivate let sectionInsets = UIEdgeInsets(top: 85.0, left: 10.0, bottom: 10.0, right: 10.0)
+    fileprivate let sectionInsetsFiltering = UIEdgeInsets(top: 135.0, left: 10.0, bottom: 10.0, right: 10.0)
     fileprivate let itemsPerRow: CGFloat = 3
+    private var filterActive: Bool = false
     
     private let viewModel: PeopleViewModel = PeopleViewModel()
     var lastYPosition: CGFloat = 0
@@ -34,6 +40,7 @@ class HomeViewController: UIViewController {
         peopleCollectionView.delegate = self
         peopleCollectionView.dataSource = self
         peopleCollectionView.register(UINib.init(nibName: "PersonCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: personCellIdentifier)
+        filterTextField.placeholder = "FILTER_TEXT_FIELD_NAME".localized
         
         self.view.setTopBarShadow(view: topBarView)
         noDataLabel.text = "NO_DATA_AVAILABLE".localized
@@ -69,7 +76,7 @@ class HomeViewController: UIViewController {
             }
         }
     }
-    
+    //MARK: View animations
     @objc func minimizeView(_ sender: AnyObject) {
         AnimationHelper.animateWithSpring(duration: 0.7, animations: {
             self.view.transform = CGAffineTransform(scaleX: 0.935, y: 0.935)
@@ -85,11 +92,40 @@ class HomeViewController: UIViewController {
         })
        UIApplication.shared.statusBarStyle = .default
     }
+    //MARK:Events
     @IBAction func addPersonPressed(_ sender: Any) {
         let addPerson = AddPersonViewController.init(nibName: "AddPersonViewController", bundle: nil, viewModel: viewModel)
         addPerson.modalDelegate = self
         addPerson.modalPresentationStyle = .overFullScreen
         navigationController?.present(addPerson, animated: false, completion: nil)
+    }
+    
+    @IBAction func filterButtonPressed(_ sender: Any) {
+        if filterActive || filterSearchViewTopConstraint.constant == 0{
+            filterActive = false
+            filterTextField.resignFirstResponder()
+            filterTextField.text = ""
+            filterSearchViewTopConstraint.constant = -48
+            AnimationHelper.animateView(duration: 0.5) {
+                self.view.layoutIfNeeded()
+            }
+            peopleCollectionView.reloadData()
+        } else {
+            filterSearchViewTopConstraint.constant = 0
+            AnimationHelper.animateView(duration: 0.5) {
+                 self.view.layoutIfNeeded()
+            }
+        }
+    }
+    @IBAction func applyFilterButtonPressed(_ sender: Any) {
+        if let text = filterTextField.text {
+            self.filterTextField.resignFirstResponder()
+            if !text.isEmpty {
+                filterActive = true
+                viewModel.filterPeopleListByName(name: text)
+                peopleCollectionView.reloadData()
+            }
+        }
     }
     
 }
@@ -98,12 +134,19 @@ class HomeViewController: UIViewController {
 extension HomeViewController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        if filterActive {
+            return viewModel.filteredPersonList.count
+        }
         return viewModel.peopleList.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: personCellIdentifier, for: indexPath) as? PersonCollectionViewCell else {
             return UICollectionViewCell()
+        }
+        if filterActive {
+            cell.personModel = viewModel.filteredPersonList[indexPath.row]
+            return cell
         }
         cell.personModel = viewModel.peopleList[indexPath.row]
         return cell
@@ -135,6 +178,9 @@ extension HomeViewController: UICollectionViewDelegateFlowLayout {
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+        if filterActive {
+            return sectionInsetsFiltering
+        }
         return sectionInsets
     }
     
@@ -149,10 +195,12 @@ extension HomeViewController: UIScrollViewDelegate{
         if(scrollView.contentOffset.y > lastYPosition && scrollView.contentOffset.y > 0){
             AnimationHelper.animateView(duration: 0.5, animations: {
                 self.topBarView.transform = CGAffineTransform(translationX:0, y: -(self.topBarView.frame.size.height))
+                self.filterSearchView.transform = CGAffineTransform(translationX:0, y: -(self.topBarView.frame.size.height))
             })
         } else {
             AnimationHelper.animateView(duration: 0.5, animations: {
                 self.topBarView.transform = CGAffineTransform.identity
+                self.filterSearchView.transform = CGAffineTransform.identity
             })
         }
         self.lastYPosition = scrollView.contentOffset.y

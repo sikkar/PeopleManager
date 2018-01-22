@@ -8,12 +8,13 @@
 
 // == home screen ==
 "NO_DATA_AVAILABLE" = "No data available";
+"FILTER_TEXT_FIELD_NAME" = "Name...";
 
 // == Add Person screen ==
 "PERSON_DATA_LABEL" = "Person data";
 "NAME_LABEL" = "Name";
-"BIRTH_LABEL" = "Birth";
-"BIRTHDAY_LABEL" = "BirthDay";
+"BIRTH_LABEL" = "Birthday";
+"BIRTHDAY_LABEL" = "Birthday";
 
 // == Service Errors ==
 "ERROR" = "Error";

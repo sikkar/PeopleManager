@@ -74,19 +74,26 @@ class DetailViewController: UIViewController {
     }
     @IBAction func userDeletionPressed(_ sender: Any) {
         LoadingOverlay.shared.showOverlay(view: self.view)
-        viewModel?.requestDeletePerson(personId: (person?.id)!, completionHandler: { error in
-            LoadingOverlay.shared.hideOverlay()
-            if let removeError = error {
-                PeopleErrorManager.presentLocalizedError(error: removeError, inView: self)
-            }else {
-                let deleteTranslationY = (self.personDetailsView.bounds.height / 2 + self.view.bounds.height / 2)
-                let deleteTranslationX = deleteTranslationY-(self.personDetailsView.bounds.height / 2)
-                self.dismissAnimation(translationX: deleteTranslationX, translationY: deleteTranslationY)
-                if let modalDelegate = self.modalDelegate {
-                    modalDelegate.reloadViewModel()
+        if let personId = self.person?.id{
+            viewModel?.requestDeletePerson(personId: personId, completionHandler: { error in
+                LoadingOverlay.shared.hideOverlay()
+                if let removeError = error {
+                    PeopleErrorManager.presentLocalizedError(error: removeError, inView: self)
+                }else {
+                    let deleteTranslationY = (self.personDetailsView.bounds.height / 2 + self.view.bounds.height / 2)
+                    let deleteTranslationX = deleteTranslationY-(self.personDetailsView.bounds.height / 2)
+                    self.dismissAnimation(translationX: deleteTranslationX, translationY: deleteTranslationY)
+                    if let modalDelegate = self.modalDelegate {
+                        modalDelegate.reloadViewModel()
+                    }
                 }
-            }
-        })
+            })
+        }
+    }
+    @IBAction func editButtonPressed(_ sender: Any) {
+        let editTranslationY = (self.personDetailsView.bounds.height / 2 + self.view.bounds.height / 2)
+        let editTranslationX = editTranslationY-(self.personDetailsView.bounds.height / 2)
+        dismissAnimation(translationX: editTranslationX, translationY: -(editTranslationY + 20))
     }
     
     func dismissAnimation(translationX: CGFloat, translationY: CGFloat){
