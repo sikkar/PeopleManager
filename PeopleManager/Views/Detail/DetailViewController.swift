@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Instructions
 
 class DetailViewController: UIViewController {
     
@@ -19,12 +20,15 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var enableEditButton: UIButton!
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var birthdayTextField: UITextField!
+    @IBOutlet weak var deletePersonButton: UIButton!
     
     let datepickerView: UIDatePicker = UIDatePicker()
     var viewModel: PeopleViewModel?
     var person: Person?
     var modalDelegate: ModalDelegate?
     var isEditingPerson: Bool = false
+    let tutorialDetailKey = "tutorialDetailKey"
+    var coachMarkHelper = CoachMarkHelper()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,7 +43,9 @@ class DetailViewController: UIViewController {
         AnimationHelper.animateWithSpring(duration: 0.5, animations: {
             self.personDetailsView.transform = CGAffineTransform.identity.translatedBy(x: amountToTranslate, y: 0)
         })
-        
+        if !(UserDefaults.standard.value(forKey: tutorialDetailKey) as? Bool ?? false) {
+            self.coachMarkHelper.controller.start(on: self)
+        }
     }
     
     //MARK:Init
@@ -61,9 +67,8 @@ class DetailViewController: UIViewController {
     private func setupView(){
         view.setCellsShadow(view: personDetailsView)
         view.setCellsShadow(view: dataView)
-        let background = UIColor.gray
-        let dimmedBackground = background.withAlphaComponent(0.4)
-        self.view.backgroundColor = dimmedBackground
+        self.view.backgroundColor = UIColor.dimmedGray()
+        setupInstructions()
         datepickerView.isHidden = true
         nameLabel.text = "NAME_LABEL".localized
         birthdayLabel.text = "BIRTHDAY_LABEL".localized
@@ -103,6 +108,7 @@ class DetailViewController: UIViewController {
         }
     }
     @IBAction func editButtonPressed(_ sender: Any) {
+        dismissInputViews()
         if !isEditingPerson {
             isEditingPerson = true
             let translateDistance = self.editButton.bounds.width

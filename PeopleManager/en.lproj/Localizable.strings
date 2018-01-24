@@ -26,3 +26,15 @@
 "ERROR_ADDING_PERSON" = "There was an error while trying to add a Person";
 "ERROR_DELETING_PERSON" = "There was an error trying to delete the Person";
 "ERROR_UPDATING_PERSON" = "There was an error trying to update the Person";
+
+// == Instructions Home == 
+"ADD_PEOPLE_MARK_TEXT" = "Add people by pressing this button and entering the desired Person data";
+"ADD_PEOPLE_MARL_BUTTON" = "OK!";
+"FILTER_PEOPLE_MARK_TEXT" = "Press this button and filter \nyour people list";
+"FILTER_PEOPLE_MARK_BUTTON" = "Got it";
+
+// == Instructions Details == //
+"EDIT_PERSON_MARK_TEXT" = "Enable edition by pressing this button.\nPress again to disable";
+"EDIT_PERSON_BUTTON_TEXT" = "Sure";
+"DELETE_PERSON_MARK_TEXT" = "Press this to delete the selected Person";
+"DELETE_PERSON_BUTTON_TEXT" = "Go";

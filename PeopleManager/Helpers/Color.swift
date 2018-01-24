@@ -14,7 +14,8 @@ extension UIColor {
         return UIColor(red: 39.0 / 255.0, green: 156.0 / 255.0, blue: 219.0 / 255.0, alpha: 1.0)
     }
     
-    class func secondaryBlue() -> UIColor {
-        return UIColor(red: 89.0 / 255.0, green: 171.0 / 255.0, blue: 227.0 / 255.0, alpha: 1.0)
+    class func dimmedGray() -> UIColor {
+        let background = UIColor.gray
+        return background.withAlphaComponent(0.4)
     }
 }

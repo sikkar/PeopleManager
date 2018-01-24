@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Instructions
 
 class HomeViewController: UIViewController {
     
@@ -17,14 +18,18 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var applyFilterButton: UIButton!
     @IBOutlet weak var filterSearchViewTopConstraint: NSLayoutConstraint!
     @IBOutlet weak var filterTextField: UITextField!
+    @IBOutlet weak var addPersonButton: UIButton!
+    @IBOutlet weak var filterPeopleButton: UIButton!
     
     fileprivate let personCellIdentifier = "personCellIdentifier"
+    let tutorialHomeKey = "TutorialHome"
     fileprivate let sectionInsets = UIEdgeInsets(top: 85.0, left: 10.0, bottom: 10.0, right: 10.0)
     fileprivate let sectionInsetsFiltering = UIEdgeInsets(top: 135.0, left: 10.0, bottom: 10.0, right: 10.0)
     fileprivate let itemsPerRow: CGFloat = 3
     private var filterActive: Bool = false
     
     private let viewModel: PeopleViewModel = PeopleViewModel()
+    var coachMarkHelper: CoachMarkHelper = CoachMarkHelper()
     var lastYPosition: CGFloat = 0
 
     override func viewDidLoad() {
@@ -36,6 +41,7 @@ class HomeViewController: UIViewController {
     func setupView(){
         self.navigationController?.navigationBar.isHidden = true
         self.peopleCollectionView.backgroundColor = UIColor.mainBlue()
+        setupInstructions()
         
         peopleCollectionView.delegate = self
         peopleCollectionView.dataSource = self

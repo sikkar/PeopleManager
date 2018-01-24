@@ -22,11 +22,11 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fus-SD-wda">
                         <rect key="frame" x="0.0" y="0.0" width="173" height="157"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="nophoto" translatesAutoresizingMaskIntoConstraints="NO" id="1Wb-It-djd">
-                                <rect key="frame" x="0.0" y="8" width="173" height="100"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="nophoto" translatesAutoresizingMaskIntoConstraints="NO" id="1Wb-It-djd">
+                                <rect key="frame" x="5" y="5" width="163" height="104"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="TPt-Lt-Kjw">
-                                <rect key="frame" x="5" y="116" width="163" height="21"/>
+                                <rect key="frame" x="5" y="117" width="163" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -34,11 +34,11 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="1Wb-It-djd" secondAttribute="trailing" id="99n-l8-77A"/>
-                            <constraint firstItem="1Wb-It-djd" firstAttribute="leading" secondItem="fus-SD-wda" secondAttribute="leading" id="Cr8-Nk-KBJ"/>
+                            <constraint firstAttribute="trailing" secondItem="1Wb-It-djd" secondAttribute="trailing" constant="5" id="99n-l8-77A"/>
+                            <constraint firstItem="1Wb-It-djd" firstAttribute="leading" secondItem="fus-SD-wda" secondAttribute="leading" constant="5" id="Cr8-Nk-KBJ"/>
                             <constraint firstAttribute="trailing" secondItem="TPt-Lt-Kjw" secondAttribute="trailing" constant="5" id="Ieo-sG-jFc"/>
                             <constraint firstItem="TPt-Lt-Kjw" firstAttribute="leading" secondItem="fus-SD-wda" secondAttribute="leading" constant="5" id="JML-qe-E84"/>
-                            <constraint firstItem="1Wb-It-djd" firstAttribute="top" secondItem="fus-SD-wda" secondAttribute="top" constant="8" id="Ubn-QA-Fqr"/>
+                            <constraint firstItem="1Wb-It-djd" firstAttribute="top" secondItem="fus-SD-wda" secondAttribute="top" constant="5" id="Ubn-QA-Fqr"/>
                             <constraint firstItem="TPt-Lt-Kjw" firstAttribute="top" secondItem="1Wb-It-djd" secondAttribute="bottom" constant="8" id="eca-jM-uXP"/>
                         </constraints>
                     </view>
@@ -60,6 +60,6 @@
         </collectionViewCell>
     </objects>
     <resources>
-        <image name="nophoto" width="100" height="100"/>
+        <image name="nophoto" width="104" height="104"/>
     </resources>
 </document>

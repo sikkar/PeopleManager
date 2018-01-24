@@ -37,9 +37,7 @@ class AddPersonViewController: UIViewController {
 
     func setupView(){
         view.setCellsShadow(view: personDataView)
-        let background = UIColor.gray
-        let dimmedBackground = background.withAlphaComponent(0.4)
-        self.view.backgroundColor = dimmedBackground
+        self.view.backgroundColor = UIColor.dimmedGray()
         datepickerView.isHidden = true
         nameTextField.placeholder = "NAME_LABEL".localized
         birthTextField.placeholder = "BIRTH_LABEL".localized

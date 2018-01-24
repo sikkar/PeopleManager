@@ -12,7 +12,9 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HomeViewController" customModule="PeopleManager" customModuleProvider="target">
             <connections>
+                <outlet property="addPersonButton" destination="pP5-j2-aPh" id="aOb-8o-Wb2"/>
                 <outlet property="applyFilterButton" destination="O5f-23-Jjh" id="0Ez-8U-wGL"/>
+                <outlet property="filterPeopleButton" destination="Oi5-QP-N8Q" id="wR9-uf-iA4"/>
                 <outlet property="filterSearchView" destination="gNM-kx-M2S" id="5UH-FD-nbQ"/>
                 <outlet property="filterSearchViewTopConstraint" destination="MdQ-f2-Tzw" id="lfh-kk-VAh"/>
                 <outlet property="filterTextField" destination="Dhn-qA-93K" id="BGJ-Jq-DyX"/>

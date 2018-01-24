@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		07AB1150F16343FB652B9A81 /* Pods_PeopleManager.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB84C1B7B945A2FC7AA19663 /* Pods_PeopleManager.framework */; };
+		4F362F002017B1BC00F7E967 /* HomeInstructions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F362EFF2017B1BC00F7E967 /* HomeInstructions.swift */; };
+		4F362F022018661600F7E967 /* DetailInstructions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F362F012018661600F7E967 /* DetailInstructions.swift */; };
+		4F362F042018689500F7E967 /* CoachMarkHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F362F032018689500F7E967 /* CoachMarkHelper.swift */; };
 		4F4B5F2E2013635700264BF9 /* AnimationHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F4B5F2D2013635700264BF9 /* AnimationHelper.swift */; };
 		4F4B5F322013B0C500264BF9 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F4B5F312013B0C500264BF9 /* Color.swift */; };
 		4F4B5F352013E30F00264BF9 /* PersonCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F4B5F332013E30F00264BF9 /* PersonCollectionViewCell.swift */; };
@@ -47,6 +50,9 @@
 /* Begin PBXFileReference section */
 		01B73B5CD8F364A6A0460443 /* Pods-PeopleManager.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PeopleManager.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PeopleManager/Pods-PeopleManager.debug.xcconfig"; sourceTree = "<group>"; };
 		3D58FF3CC46F00F33F3D3860 /* Pods-PeopleManager.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PeopleManager.release.xcconfig"; path = "Pods/Target Support Files/Pods-PeopleManager/Pods-PeopleManager.release.xcconfig"; sourceTree = "<group>"; };
+		4F362EFF2017B1BC00F7E967 /* HomeInstructions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeInstructions.swift; sourceTree = "<group>"; };
+		4F362F012018661600F7E967 /* DetailInstructions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailInstructions.swift; sourceTree = "<group>"; };
+		4F362F032018689500F7E967 /* CoachMarkHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoachMarkHelper.swift; sourceTree = "<group>"; };
 		4F4B5F2D2013635700264BF9 /* AnimationHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationHelper.swift; sourceTree = "<group>"; };
 		4F4B5F312013B0C500264BF9 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		4F4B5F332013E30F00264BF9 /* PersonCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -122,6 +128,7 @@
 		4FE66A352014CB0000B08E2A /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				4F362F032018689500F7E967 /* CoachMarkHelper.swift */,
 				4F4B5F372013E81900264BF9 /* ShadowView.swift */,
 				4FE66A362014CB1E00B08E2A /* PeopleError.swift */,
 				4FE66A402014DA2100B08E2A /* LoadingOverlay.swift */,
@@ -154,6 +161,7 @@
 			children = (
 				4FF13A3120133B7F00BB1B00 /* DetailViewController.swift */,
 				4FF13A3220133B7F00BB1B00 /* DetailViewController.xib */,
+				4F362F012018661600F7E967 /* DetailInstructions.swift */,
 			);
 			path = Detail;
 			sourceTree = "<group>";
@@ -245,6 +253,7 @@
 			children = (
 				4FF3F36A200F327300685D1B /* HomeViewController.swift */,
 				4FF3F36B200F327300685D1B /* HomeViewController.xib */,
+				4F362EFF2017B1BC00F7E967 /* HomeInstructions.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -379,12 +388,14 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-PeopleManager/Pods-PeopleManager-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/AlamofireObjectMapper/AlamofireObjectMapper.framework",
+				"${BUILT_PRODUCTS_DIR}/Instructions/Instructions.framework",
 				"${BUILT_PRODUCTS_DIR}/ObjectMapper/ObjectMapper.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireObjectMapper.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Instructions.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ObjectMapper.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -491,10 +502,13 @@
 				4FE66A412014DA2100B08E2A /* LoadingOverlay.swift in Sources */,
 				4F4B5F2E2013635700264BF9 /* AnimationHelper.swift in Sources */,
 				4FF13A2F20127ED700BB1B00 /* DateHelper.swift in Sources */,
+				4F362F042018689500F7E967 /* CoachMarkHelper.swift in Sources */,
 				4FF3F36C200F327300685D1B /* HomeViewController.swift in Sources */,
+				4F362F022018661600F7E967 /* DetailInstructions.swift in Sources */,
 				4FF13A3320133B7F00BB1B00 /* DetailViewController.swift in Sources */,
 				4F4B5F352013E30F00264BF9 /* PersonCollectionViewCell.swift in Sources */,
 				4FE66A332014AB3000B08E2A /* AddPersonViewController.swift in Sources */,
+				4F362F002017B1BC00F7E967 /* HomeInstructions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

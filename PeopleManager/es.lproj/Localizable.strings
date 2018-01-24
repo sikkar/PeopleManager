@@ -26,3 +26,15 @@
 "ERROR_ADDING_PERSON" = "Ha habido un error intentando añadir a la Persona";
 "ERROR_DELETING_PERSON" = "Ha habido un error al borrar a la Persona";
 "ERROR_UPDATING_PERSON" = "Ha habido un error al actualizar a la Persona";
+
+// == Instructions Home ==
+"ADD_PEOPLE_MARK_TEXT" = "Añade Personas presionando este botón e intruduce los datos";
+"ADD_PEOPLE_MARL_BUTTON" = "OK!";
+"FILTER_PEOPLE_MARK_TEXT" = "Presiona este boton para filtrar \nla lista de Personas";
+"FILTER_PEOPLE_MARK_BUTTON" = "Lo tengo!";
+
+// == Instructions Details == //
+"EDIT_PERSON_MARK_TEXT" = "Presionando este botón activa la edición.\nPresionalo de nuevo para desactivar";
+"EDIT_PERSON_BUTTON_TEXT" = "Vale";
+"DELETE_PERSON_MARK_TEXT" = "Presiona este botón para eliminar a la persona seleccionada";
+"DELETE_PERSON_BUTTON_TEXT" = "Vamos";
