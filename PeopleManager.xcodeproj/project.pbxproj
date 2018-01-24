@@ -11,6 +11,7 @@
 		4F362F002017B1BC00F7E967 /* HomeInstructions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F362EFF2017B1BC00F7E967 /* HomeInstructions.swift */; };
 		4F362F022018661600F7E967 /* DetailInstructions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F362F012018661600F7E967 /* DetailInstructions.swift */; };
 		4F362F042018689500F7E967 /* CoachMarkHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F362F032018689500F7E967 /* CoachMarkHelper.swift */; };
+		4F362F062019196B00F7E967 /* RobotoMono-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4F362F052019196B00F7E967 /* RobotoMono-Medium.ttf */; };
 		4F4B5F2E2013635700264BF9 /* AnimationHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F4B5F2D2013635700264BF9 /* AnimationHelper.swift */; };
 		4F4B5F322013B0C500264BF9 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F4B5F312013B0C500264BF9 /* Color.swift */; };
 		4F4B5F352013E30F00264BF9 /* PersonCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F4B5F332013E30F00264BF9 /* PersonCollectionViewCell.swift */; };
@@ -53,6 +54,7 @@
 		4F362EFF2017B1BC00F7E967 /* HomeInstructions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeInstructions.swift; sourceTree = "<group>"; };
 		4F362F012018661600F7E967 /* DetailInstructions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailInstructions.swift; sourceTree = "<group>"; };
 		4F362F032018689500F7E967 /* CoachMarkHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoachMarkHelper.swift; sourceTree = "<group>"; };
+		4F362F052019196B00F7E967 /* RobotoMono-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "RobotoMono-Medium.ttf"; sourceTree = "<group>"; };
 		4F4B5F2D2013635700264BF9 /* AnimationHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationHelper.swift; sourceTree = "<group>"; };
 		4F4B5F312013B0C500264BF9 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		4F4B5F332013E30F00264BF9 /* PersonCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -199,6 +201,7 @@
 				4FF3F347200F2C9A00685D1B /* LaunchScreen.storyboard */,
 				4FF3F34A200F2C9A00685D1B /* Info.plist */,
 				4FE66A3C2014CBD000B08E2A /* Localizable.strings */,
+				4F362F052019196B00F7E967 /* RobotoMono-Medium.ttf */,
 			);
 			path = PeopleManager;
 			sourceTree = "<group>";
@@ -364,6 +367,7 @@
 				4F4B5F362013E30F00264BF9 /* PersonCollectionViewCell.xib in Resources */,
 				4FE66A3A2014CBD000B08E2A /* Localizable.strings in Resources */,
 				4FE66A342014AB3000B08E2A /* AddPersonViewController.xib in Resources */,
+				4F362F062019196B00F7E967 /* RobotoMono-Medium.ttf in Resources */,
 				4FF13A3420133B7F00BB1B00 /* DetailViewController.xib in Resources */,
 				4FF3F36D200F327300685D1B /* HomeViewController.xib in Resources */,
 			);

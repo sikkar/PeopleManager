@@ -40,7 +40,7 @@ class HomeViewController: UIViewController {
     
     func setupView(){
         self.navigationController?.navigationBar.isHidden = true
-        self.peopleCollectionView.backgroundColor = UIColor.mainBlue()
+        self.peopleCollectionView.backgroundColor = UIColor.mainClearGray()
         setupInstructions()
         
         peopleCollectionView.delegate = self

@@ -60,7 +60,7 @@ class CoachMarkHelper: CoachMarksControllerDataSource, CoachMarksControllerDeleg
     
     
     func numberOfCoachMarks(for coachMarksController: CoachMarksController) -> Int {
-        return 2
+        return coachMarkViews.count
     }
     
 }

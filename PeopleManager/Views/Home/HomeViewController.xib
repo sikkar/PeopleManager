@@ -37,7 +37,7 @@
                 </label>
                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="D08-Na-erJ">
                     <rect key="frame" x="0.0" y="20" width="375" height="647"/>
-                    <color key="backgroundColor" red="0.26666666666666666" green="0.42352941176470588" blue="0.70196078431372544" alpha="1" colorSpace="calibratedRGB"/>
+                    <color key="backgroundColor" red="0.86274509803921573" green="0.42352941176470588" blue="0.70196078431372544" alpha="1" colorSpace="calibratedRGB"/>
                     <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Col-id-etD">
                         <size key="itemSize" width="50" height="50"/>
                         <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -80,13 +80,6 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xPf-br-zkx">
                     <rect key="frame" x="0.0" y="20" width="375" height="75"/>
                     <subviews>
-                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" image="peoplelogo" translatesAutoresizingMaskIntoConstraints="NO" id="94b-DG-qjg">
-                            <rect key="frame" x="147" y="21.5" width="80" height="33"/>
-                            <constraints>
-                                <constraint firstAttribute="width" constant="80" id="B47-8Y-mCw"/>
-                                <constraint firstAttribute="height" constant="33" id="jxt-mq-N66"/>
-                            </constraints>
-                        </imageView>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Oi5-QP-N8Q">
                             <rect key="frame" x="10" y="13.5" width="48" height="48"/>
                             <constraints>
@@ -115,8 +108,6 @@
                         <constraint firstAttribute="trailing" secondItem="pP5-j2-aPh" secondAttribute="trailing" constant="10" id="7CS-S1-Xp3"/>
                         <constraint firstItem="pP5-j2-aPh" firstAttribute="centerY" secondItem="xPf-br-zkx" secondAttribute="centerY" id="8r5-9b-YmI"/>
                         <constraint firstItem="Oi5-QP-N8Q" firstAttribute="leading" secondItem="xPf-br-zkx" secondAttribute="leading" constant="10" id="MjG-kF-7ss"/>
-                        <constraint firstItem="94b-DG-qjg" firstAttribute="centerX" secondItem="xPf-br-zkx" secondAttribute="centerX" id="WEf-j6-2eK"/>
-                        <constraint firstItem="94b-DG-qjg" firstAttribute="centerY" secondItem="xPf-br-zkx" secondAttribute="centerY" id="Wgq-cN-o5c"/>
                         <constraint firstAttribute="height" constant="75" id="dpk-Ew-kUf"/>
                         <constraint firstItem="Oi5-QP-N8Q" firstAttribute="centerY" secondItem="xPf-br-zkx" secondAttribute="centerY" id="kAb-VM-BEy"/>
                     </constraints>
@@ -144,6 +135,5 @@
     <resources>
         <image name="adduser" width="24" height="24"/>
         <image name="filter" width="24" height="24"/>
-        <image name="peoplelogo" width="120" height="50"/>
     </resources>
 </document>

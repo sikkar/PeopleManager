@@ -20,6 +20,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let homeNC = UINavigationController.init(rootViewController: homeVC)
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.rootViewController = homeNC
+        window?.backgroundColor = UIColor.mainBlue()
         window?.makeKeyAndVisible()
         
         return true
