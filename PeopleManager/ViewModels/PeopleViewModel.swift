@@ -25,10 +25,6 @@ class PeopleViewModel: NSObject {
             } else {
                 if let people = peopleArray {
                     strongSelf.peopleList = people
-//                    for _ in 1...10 {
-//                       strongSelf.peopleList.append(Person.init(name: "Angel", birthDate: Date()))
-//                        strongSelf.peopleList.append(Person.init(name: "Leonardo", birthDate: Date()))
-//                    }
                     completionHandler(nil)
                 }
             }

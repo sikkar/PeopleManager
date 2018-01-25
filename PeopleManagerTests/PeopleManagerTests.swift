@@ -11,9 +11,11 @@ import XCTest
 
 class PeopleManagerTests: XCTestCase {
     
+    var viewModel: PeopleViewModel?
+    
     override func setUp() {
         super.setUp()
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+        viewModel = PeopleViewModel();
     }
     
     override func tearDown() {
@@ -21,16 +23,40 @@ class PeopleManagerTests: XCTestCase {
         super.tearDown()
     }
     
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+    func testFetchAllPeople() {
+        let promise = expectation(description: "Get all people")
+        viewModel?.requestAllPeople { error in
+            if let _ = error {
+                XCTFail()
+            }
+            if self.viewModel?.peopleList != nil{
+                promise.fulfill()
+            }
+        }
+        waitForExpectations(timeout: 10, handler: nil)
     }
     
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
+    func testFakeService() {
+        PeopleService.sharedInstance.fetchFakePerson { complete, person, error in
+            XCTAssert(complete)
+            XCTAssertNil(error)
+            XCTAssertNotNil(person)
         }
     }
     
+    func testFiltering(){
+        let person1 = Person.init(name: "Roberto", birthDate: Date())
+        let person2 = Person.init(name: "Maria", birthDate: Date())
+        viewModel?.peopleList = [person1, person2]
+        viewModel?.filteredPersonList = [person1, person2]
+        viewModel?.filterPeopleListByName(name:"Roberto")
+        XCTAssertNotEqual(viewModel?.filteredPersonList.count, viewModel?.peopleList.count)
+    }
+}
+
+extension PeopleService {
+    
+    func fetchFakePerson(complete: @escaping (Bool, Person, PeopleError?) -> ()) {
+        complete(true, Person.init(name: "Ang", birthDate: Date()),nil)
+    }
 }
